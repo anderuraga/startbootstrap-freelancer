@@ -1,7 +1,13 @@
+
+#contact{
+  background-color: $verde;
+}
+
 // Styling for the contact section
 .floating-label-form-group {
   position: relative;
   border-bottom: 1px solid $gray-200;
+  
   input,
   textarea {
     font-size: 1.5em;

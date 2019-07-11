@@ -10814,6 +10814,10 @@ a.text-dark:hover, a.text-dark:focus {
   opacity: 1;
 }
 
+#contact {
+  background-color: #d4db43;
+}
+
 .floating-label-form-group {
   position: relative;
   border-bottom: 1px solid #e9ecef;
