@@ -12,6 +12,7 @@ const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
+const concat = require('gulp-concat');
 
 // Load package.json for banner
 const pkg = require('./package.json');
@@ -114,20 +115,38 @@ function js() {
     .pipe(browsersync.stream());
 }
 
+
+ function html() {
+   return gulp.src([
+                  'htmls/head.html',    
+                  'htmls/navigation.html',
+                  'htmls/masterhead.html',
+                  'htmls/about.html',
+                  'htmls/servicios.html',
+                  'htmls/contacto.html',
+                  'htmls/footer.html',
+                  'htmls/modales.html',
+                  'htmls/foot.html'               
+                ])
+  .pipe(concat('index.html'))
+  .pipe(gulp.dest('./'));
+}
+
 // Watch files
 function watchFiles() {
   gulp.watch("./scss/**/*", css);
   gulp.watch(["./js/**/*", "!./js/**/*.min.js"], js);
-  gulp.watch("./**/*.html", browserSyncReload);
+  gulp.watch("./htmls/**/*", html);
 }
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js));
+const build = gulp.series(vendor, gulp.parallel(css, js, html));
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
 exports.css = css;
+exports.html = html;
 exports.js = js;
 exports.clean = clean;
 exports.vendor = vendor;
