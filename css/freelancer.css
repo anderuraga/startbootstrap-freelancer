@@ -10577,6 +10577,10 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.lead-medium {
+  font-size: 1.6em;
+}
+
 .divider-custom {
   margin: 1.25rem 0 1.5rem;
   width: 100%;
@@ -10816,6 +10820,24 @@ a.text-dark:hover, a.text-dark:focus {
 
 #contact {
   background-color: #d4db43;
+}
+
+#contact a {
+  text-decoration: none;
+  font-size: 2em;
+  color: #080b0e;
+}
+
+#contact a:hover {
+  color: #06b7df !important;
+}
+
+#contact i.fas {
+  display: block;
+}
+
+#contact i.fas:hover {
+  color: #06b7df !important;
 }
 
 .floating-label-form-group {

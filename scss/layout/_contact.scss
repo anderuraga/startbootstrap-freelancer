@@ -1,6 +1,25 @@
 
 #contact{
   background-color: $verde;
+
+  a{
+    text-decoration: none;
+    font-size: 2em;
+    color: darken( $dark-blue, 20);
+    &:hover{
+      color: $teal !important;
+    }
+  }
+
+
+  i.fas{
+    display: block;
+    &:hover{
+      color: $teal !important;
+    }
+  }
+
+
 }
 
 // Styling for the contact section
