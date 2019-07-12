@@ -10732,6 +10732,19 @@ p {
   }
 }
 
+#about2 {
+  background-color: #f1846a;
+}
+
+#about2 .row {
+  margin-bottom: 2rem;
+}
+
+#about2 img {
+  width: 100%;
+  height: auto;
+}
+
 .masthead {
   padding-top: calc(6rem + 74px);
   padding-bottom: 20rem;

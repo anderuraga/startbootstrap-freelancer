@@ -122,6 +122,7 @@ function js() {
                   'htmls/navigation.html',
                   'htmls/masterhead.html',
                   'htmls/about.html',
+                  'htmls/about2.html',
                   'htmls/servicios.html',
                   'htmls/contacto.html',
                   'htmls/footer.html',
