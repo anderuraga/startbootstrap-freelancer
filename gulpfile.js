@@ -13,6 +13,50 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const concat = require('gulp-concat');
+const responsive = require('gulp-responsive');
+ 
+function images(){
+  return gulp.src('src/img/portfolio/*.{png,jpg}')
+    .pipe(responsive({
+      // Resize all JPG images to three different sizes: 200, 500, and 630 pixels
+      '*.jpg': [{
+        width: 320,
+        rename: { suffix: '-320w' },
+      }, {
+        width: 480,
+        rename: { suffix: '-480w' },
+      }, {
+        width: 800,
+        rename: { suffix: '-800w' },
+      }, {
+        // Compress, strip metadata, and rename original image
+        rename: { suffix: '-original' },
+      }],
+      // Resize all PNG images to be retina ready
+      '*.png': [{
+        width: 320,
+        rename: { suffix: '-320w' },
+      }, {
+        width: 480,
+        rename: { suffix: '-480w' },
+      }, {
+        width: 800,
+        rename: { suffix: '-800w' },
+      }, {
+        // Compress, strip metadata, and rename original image
+        rename: { suffix: '-original' },
+      }],
+    }, {
+      // Global configuration for all images
+      // The output quality for JPEG, WebP and TIFF output formats
+      quality: 70,
+      // Use progressive (interlace) scan for JPEG and PNG output
+      progressive: true,
+      // Strip all metadata
+      withMetadata: false,
+    }))
+    .pipe(gulp.dest('img/portfolio'));
+}
 
 // Load package.json for banner
 const pkg = require('./package.json');
@@ -42,6 +86,7 @@ function browserSyncReload(done) {
   browsersync.reload();
   done();
 }
+
 
 // Clean vendor
 function clean() {
@@ -97,6 +142,9 @@ function css() {
     .pipe(browsersync.stream());
 }
 
+
+
+
 // JS task
 function js() {
   return gulp
@@ -115,7 +163,7 @@ function js() {
     .pipe(browsersync.stream());
 }
 
-
+// concat html
  function html() {
    return gulp.src([
                   'htmls/head.html',    
@@ -132,6 +180,9 @@ function js() {
   .pipe(concat('index.html'))
   .pipe(gulp.dest('./'));
 }
+
+
+
 
 // Watch files
 function watchFiles() {
@@ -156,3 +207,5 @@ exports.vendor = vendor;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;
+exports.images = images;
+
