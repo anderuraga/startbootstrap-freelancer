@@ -16,7 +16,7 @@ const concat = require('gulp-concat');
 const responsive = require('gulp-responsive');
  
 function images(){
-  return gulp.src('src/img/portfolio/*.{png,jpg}')
+  return gulp.src('src/img/*.{png,jpg}')
     .pipe(responsive({
       // Resize all JPG images to three different sizes: 200, 500, and 630 pixels
       '*.jpg': [{
@@ -55,7 +55,7 @@ function images(){
       // Strip all metadata
       withMetadata: false,
     }))
-    .pipe(gulp.dest('img/portfolio'));
+    .pipe(gulp.dest('img/'));
 }
 
 // Load package.json for banner
