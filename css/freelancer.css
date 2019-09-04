@@ -9835,6 +9835,14 @@ p {
   opacity: 1;
 }
 
+#horarios {
+  background-color: #f1846a;
+}
+
+#horarios .row {
+  margin-bottom: 2rem;
+}
+
 #contact {
   background-color: #d4db43;
 }
