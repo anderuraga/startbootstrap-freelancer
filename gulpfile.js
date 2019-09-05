@@ -172,6 +172,7 @@ function js() {
                   'htmls/about.html',
                   'htmls/about2.html',
                   'htmls/servicios.html',
+                  'htmls/horarios.html',
                   'htmls/contacto.html',
                   'htmls/footer.html',
                   'htmls/modales.html',
