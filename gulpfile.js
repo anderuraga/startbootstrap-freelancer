@@ -176,6 +176,7 @@ function js() {
                   'htmls/contacto.html',
                   'htmls/footer.html',
                   'htmls/modales.html',
+                  'htmls/rgpd.html',   
                   'htmls/foot.html'               
                 ])
   .pipe(concat('index.html'))

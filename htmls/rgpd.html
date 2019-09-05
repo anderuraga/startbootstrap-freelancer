@@ -1,0 +1,27 @@
+
+<div class="fixed-bottom rgpdbh bg-white p-3">
+    Utilizamos cookies para proporcionar y mejorar nuestros servicios. Al navegar por nuestro sitio, usted acepta las cookies. <a href="politica-de-cookies.html" target="_blank">Política de Cookies</a> 
+    <button type="button" class="close" aria-label="Close">
+      <span aria-hidden="true" class="bcrgpdbh" onclick="hbRgpd()">&times;</span>
+    </button>
+ </div>
+
+ <script>
+ 
+ 
+    // RGPD
+    function hbRgpd() {
+        localStorage.setItem("rgpd", "aceptado"); // Almaceno el dato 'rgpd' con el valor 'aceptado' en localStorage 
+        document.getElementsByClassName("rgpdbh")[0].style.display = 'none'; // Oculto mi div con nombre de clase 'rgpdbh'
+    }
+    
+
+    
+    var rgpdval = localStorage.getItem("rgpd");
+    if (rgpdval == 'aceptado') { 
+        document.getElementsByClassName("rgpdbh")[0].style.display = 'none';
+    }
+    else { 
+         document.getElementsByClassName("rgpdbh")[0].style.display = 'inherit';
+    }
+ </script>
