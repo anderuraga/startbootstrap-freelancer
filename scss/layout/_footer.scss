@@ -8,8 +8,24 @@
     text-align: center;
   }
 
+
+
 }
 
 .copyright {
   background-color: darken($secondary, 10%);
+
+  ul{
+    list-style-type: none;
+  }
+
+  li, small{
+    text-align: center;
+  }
+
+  p{
+    width: 100%;
+    text-align: center;
+  }
+
 }
