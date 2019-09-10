@@ -1,5 +1,14 @@
 // Styling for the portfolio grid section
+.portfolio-modal{
+
+  li{
+    text-align: left;
+  }
+}
+
 .portfolio {
+
+
   margin-bottom: -30px;
   .portfolio-item {
     cursor: pointer;
